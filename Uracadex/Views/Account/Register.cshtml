@@ -1,0 +1,43 @@
+﻿@model Uracadex.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+    <link href="~/Content/signin.css" rel="stylesheet">
+
+@*<h2>@ViewBag.Title.</h2>*@
+
+<div class="text-center">
+
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-signin", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <h1 class="h3 mb-3 font-weight-normal pt-5">Create a new account.</h1>
+
+
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" value="@Model.Email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" value="@Model.Password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <label for="inputPassword" class="sr-only">Confirm Password</label>
+        <input type="password" value="@Model.ConfirmPassword" name="confirmpassword" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <p>
+            @Html.ActionLink("Log in", "Login")
+        </p>
+
+    }
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

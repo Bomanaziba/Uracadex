@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Uracadex</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="#top">
+            @Html.ActionLink("Uracadex", "Index", "Home", null, new { @class = "navbar-brand" })
+            @*<a class="navbar-brand" href="Home/Index">Uracadex</a>*@
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                        @*<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>*@
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Think Pad", "ThinkPad", "Home", null, new { @class = "nav-link" })
+                        @*<a class="nav-link" href="#">Link</a>*@
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })
+                        @*<a class="nav-link disabled" href="#">Disabled</a>*@
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+                        @*<a class="nav-link disabled" href="#">Disabled</a>*@
+                    </li>
+                </ul>
+                @*<form class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>*@
+                @Html.Partial("_LoginPartial")
+            </div>
+        </nav>
+    </header>
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Uracadex", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Think Pad", "ThinkPad", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    <main role="main">
+        @RenderBody()
+        <hr />
+
+        <!-- FOOTER -->
+        @*<footer class="container">
+
+
+
+            </footer>*@
+
+        <footer class="text-center">
+            <p class="float-right"><a href="#top">Back to top</a></p>
+            <p>&copy; @DateTime.Now.Year Copyright Uracadex (Universal Research & Academic Exchange). All Rights Reserved. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p>Uracadex.com is the world’s first and largest free research and development support online platform for students.</p>
+        </footer>
+    </main>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>window.jQuery || document.write('<script src="~/scripts/jquery-slim.min.js"><\/script>')</script>
+</body>
+</html>

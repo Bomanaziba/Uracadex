@@ -1,0 +1,111 @@
+﻿@model Uracadex.Models.SNARSViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light pt-5">
+
+    <div class="container">
+
+
+        <h2>Details</h2>
+
+        <link href="~/Content/form-validation.css" rel="stylesheet" />
+
+        <div>
+            <h4>SNARS</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.University)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.University)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Level)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Level)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Course)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Course)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Request)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Request)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ResearchInterest)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ResearchInterest)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.SNARSId }) |
+            @Html.ActionLink("Back to List", "List")
+        </p>
+
+    </div>
+</div>
